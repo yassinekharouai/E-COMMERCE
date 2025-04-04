@@ -5,9 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[HomeController::class,'home']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -23,3 +21,11 @@ require __DIR__.'/auth.php';
 
 
 route::get('admin/dashboard',[HomeController::class,'index'])->middleware(['auth','admin']);
+
+
+
+Route::get('/login', function () {
+    return view('auth.login');
+})->name('login');
+
+Route::post('/login', [\App\Http\Controllers\Auth\AuthenticatedSessionController::class, 'store']);
