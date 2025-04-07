@@ -93,7 +93,8 @@
                     <tr>
                         <th>Category name</th>
 
-                        <th></th>
+
+                        <th>Delete</th>
 
                     </tr>
 
@@ -102,6 +103,13 @@
                     <tr>
                         <td>
                             {{$data->category_name}}
+                        </td>
+                        
+                        <td>
+                            <a class="btn btn-danger" href="{{url('delete_category',$data->id)}}" 
+                                onclick="return confirm('Are you sure you want to delete this category?')">
+                                Delete
+                             </a>
                         </td>
                     </tr>
 

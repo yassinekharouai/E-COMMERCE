@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
+use App\Http\Middleware\Admin;
 
 Route::get('/',[HomeController::class,'home']);
 
@@ -34,3 +35,13 @@ Route::post('/login', [\App\Http\Controllers\Auth\AuthenticatedSessionController
 route::get('view_category',[AdminController::class,'view_category'])->middleware(['auth','admin']);
 
 route::post('add_category',[AdminController::class,'add_category'])->middleware(['auth','admin']);
+
+
+Route::get('/delete_category/{category}', [AdminController::class, 'delete_category'])->name('delete.category');
+
+Route::get('add_product', [AdminController::class, 'add_product'])->middleware(['auth','admin']);
+
+Route::post('upload_product', [AdminController::class, 'upload_product'])->middleware(['auth','admin']);
+
+
+
