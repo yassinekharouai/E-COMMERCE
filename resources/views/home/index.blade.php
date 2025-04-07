@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    @include('home.css')
+  @include('home.css')
 </head>
 
 <body>
@@ -11,8 +11,8 @@
     @include('home.header')
     <!-- end header section -->
     <!-- slider section -->
-
     @include('home.slider')
+   
 
     <!-- end slider section -->
   </div>
@@ -21,7 +21,6 @@
   <!-- shop section -->
 
   @include('home.product')
-
   <!-- end shop section -->
 
 

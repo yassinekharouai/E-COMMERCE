@@ -34,7 +34,8 @@
             </li>
           </ul>
           <div class="user_option">
-            <a href="{{ route('auth.login') }}">
+            <a href="{{ route('login') }}">
+
               <i class="fa fa-user" aria-hidden="true"></i>
               <span>Login</span>
             </a>

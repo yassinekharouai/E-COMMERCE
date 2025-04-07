@@ -23,9 +23,9 @@ require __DIR__.'/auth.php';
 route::get('admin/dashboard',[HomeController::class,'index'])->middleware(['auth','admin']);
 
 
-
 Route::get('/login', function () {
-    return view('auth.login');
+    return view('auth.login'); // Correct path for Laravel Breeze
 })->name('login');
+
 
 Route::post('/login', [\App\Http\Controllers\Auth\AuthenticatedSessionController::class, 'store']);
