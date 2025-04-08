@@ -77,6 +77,28 @@ class AdminController extends Controller
         return redirect()->back()->with('success', 'Product uploaded successfully!');
     }
 
+    public function view_product()
+    {
+        $product = Product::all();
+        return view('admin.view_product',compact('product'));
+    }
+
+
+    public function delete_product($id)
+    {
+        $data = Product::find($id);
+        $data->delete();
+        return redirect()->back()->with('success', 'Product deleted successfully!');
+    }
+
+    public function product_search(Request $request)
+    {
+
+        $search = $request->search;
+        $product = Product::where('title','LIKE','%'.$search.'%')->orWhere('category','LIKE','%'.$search.'%')->get();
+        return view('admin.view_product',compact('product'));
+    }
+
 
 
 }
