@@ -2,7 +2,7 @@
       <nav class="navbar navbar-expand-lg custom_nav-container ">
         <a class="navbar-brand" href="index.html">
           <span>
-            Giftos
+            TRALALERO
           </span>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,7 +34,21 @@
             </li>
           </ul>
           <div class="user_option">
+            @if (Route::has('login'))
+
+
+             @auth
+
+             <form style="padding:10px" method="POST" action="{{ route('logout') }}">
+              @csrf
+              <input class="btn btn-success" type="submit" value="logout">
+
+             </form>
+             @else
             <a href="{{ route('login') }}">
+
+
+              
 
               <i class="fa fa-user" aria-hidden="true"></i>
               <span>Login</span>
@@ -46,6 +60,11 @@
                 Register
               </span>
             </a>
+
+            @endauth
+            @endif
+
+            
             <a href="">
               <i class="fa fa-shopping-bag" aria-hidden="true"></i>
             </a>

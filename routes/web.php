@@ -6,11 +6,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Middleware\Admin;
+use App\Http\Controllers\StripeController;
 
 Route::get('/',[HomeController::class,'home']);
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('home.index');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
@@ -47,4 +48,19 @@ Route::get('view_product', [AdminController::class, 'view_product'])->middleware
 
 Route::get('delete_product/{id}', [AdminController::class, 'delete_product'])->middleware(['auth','admin']);
 
+Route::get('update_product/{id}', [AdminController::class, 'update_product'])->middleware(['auth','admin']);
+
+Route::post('edit_product/{id}', [AdminController::class, 'edit_product'])->middleware(['auth','admin']);
+
 Route::get('product_search', [AdminController::class, 'product_search'])->middleware(['auth','admin']);
+
+
+
+
+Route::get('/payment/form', function () {
+    return view('payment.form');
+})->name('payment.form');
+
+Route::post('/stripe/checkout', [StripeController::class, 'checkout'])->name('stripe.checkout');
+Route::get('/stripe/success', [StripeController::class, 'success'])->name('stripe.success');
+Route::get('/stripe/cancel', [StripeController::class, 'cancel'])->name('stripe.cancel');
