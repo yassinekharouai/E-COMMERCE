@@ -68,3 +68,5 @@ Route::get('/stripe/cancel', [StripeController::class, 'cancel'])->name('stripe.
 
 
 Route::get('/product_details/{id}',[HomeController::class, 'product_details']);
+
+Route::get('/add_cart/{id}',[HomeController::class, 'add_cart'])->middleware(['auth','verified']);
