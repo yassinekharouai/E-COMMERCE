@@ -111,4 +111,24 @@ class HomeController extends Controller
 
     }
 
+    public function mycart()
+    {
+        if(Auth::id())
+        {
+            $user = Auth::user();
+
+            $userid = $user->id;
+
+            $count = Cart::where('user_id',$userid)->count();
+
+            $cart = Cart::where('user_id',$userid)->get();
+        }
+        else
+        {
+            $count = '';
+        }
+
+        return view('home.mycart',compact('count','cart'));
+    }
+
 }
