@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Category;
 use Flasher\Laravel\Facade\Flasher;
 use App\Models\Product;
+use App\Models\Cart;
 
 
 
@@ -86,11 +87,15 @@ class AdminController extends Controller
 
     public function delete_product($id)
     {
+        // First delete all cart items referencing this product
+        Cart::where('product_id', $id)->delete();
+        
+        // Then delete the product
         $data = Product::find($id);
         $data->delete();
+        
         return redirect()->back()->with('success', 'Product deleted successfully!');
     }
-
     public function update_product($id)
     {   
 
