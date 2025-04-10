@@ -36,7 +36,12 @@
         margin-bottom: 70px;
         padding: 18px;
     }
-
+    .check
+    {
+        text-align: center;
+        margin-bottom: 70px;
+        padding: 18px;
+    }
   </style>
 </head>
 
@@ -84,6 +89,15 @@
   <div class="cart_value">
 
     <h3>Total value of cart is : ${{$value}}</h3>
+  </div>
+
+  <div class="check">
+    <form action="{{ route('stripe.checkout') }}" method="POST" >
+        @csrf
+        <button type="submit" class="btn btn-primary">Proceed to Checkout</button>
+    </form>
+    
+    
   </div>
 
   

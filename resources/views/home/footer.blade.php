@@ -18,14 +18,7 @@
     <div class="info_container ">
       <div class="container">
         <div class="row">
-          <div class="col-md-6 col-lg-3">
-            <h6>
-              ABOUT US
-            </h6>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doLorem ipsum dolor sit amet, consectetur adipiscing elit, sed doLorem ipsum dolor sit amet,
-            </p>
-          </div>
+          
           <div class="col-md-6 col-lg-3">
             <div class="info_form ">
               <h5>
@@ -39,32 +32,26 @@
               </form>
             </div>
           </div>
-          <div class="col-md-6 col-lg-3">
-            <h6>
-              NEED HELP
-            </h6>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doLorem ipsum dolor sit amet, consectetur adipiscing elit, sed doLorem ipsum dolor sit amet,
-            </p>
-          </div>
+          
           <div class="col-md-6 col-lg-3">
             <h6>
               CONTACT US
             </h6>
             <div class="info_link-box">
-              <a href="">
-                <i class="fa fa-map-marker" aria-hidden="true"></i>
-                <span> Gb road 123 london Uk </span>
+              <a href="https://maps.google.com/?q=ENSA+Agadir+Morocco" target="_blank">
+                  <i class="fa fa-map-marker" aria-hidden="true"></i>
+                  <span>ENSA Agadir, Morocco</span>
               </a>
-              <a href="">
-                <i class="fa fa-phone" aria-hidden="true"></i>
-                <span>+01 12345678901</span>
+              <a href="tel:+212665035203">
+                  <i class="fa fa-phone" aria-hidden="true"></i>
+                  <span>+212 665 035 203</span>
               </a>
-              <a href="">
-                <i class="fa fa-envelope" aria-hidden="true"></i>
-                <span> demo@gmail.com</span>
+              <a href="mailto:yassinekharouai@gmail.com">
+                  <i class="fa fa-envelope" aria-hidden="true"></i>
+                  <span>yassinekharouai@gmail.com</span>
               </a>
             </div>
+          
           </div>
         </div>
       </div>
@@ -73,8 +60,8 @@
     <footer class=" footer_section">
       <div class="container">
         <p>
-          &copy; <span id="displayYear"></span> All Rights Reserved By
-          <a href="https://html.design/">Web Tech Knowledge</a>
+          &copy; <span id="displayYear"></span> 
+          <a href="https://html.design/"></a>
         </p>
       </div>
     </footer>
