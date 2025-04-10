@@ -92,7 +92,7 @@
   </div>
 
   <div class="check">
-    <form action="{{ route('stripe.checkout') }}" method="POST" >
+    <form action="{{ route('payment.form') }}" method="get" >
         @csrf
         <button type="submit" class="btn btn-primary">Proceed to Checkout</button>
     </form>

@@ -1,15 +1,15 @@
 <nav id="sidebar">
         <!-- Sidebar Header-->
         <div class="sidebar-header d-flex align-items-center">
-          <div class="avatar"><img src="{{asset('/admincss/img/avatar-6.jpg')}}" alt="..." class="img-fluid rounded-circle"></div>
+          <div class="avatar"><img src="{{asset('/images/ana_ou_mehdi.jpeg')}}" alt="..." class="img-fluid rounded-circle"></div>
           <div class="title">
-            <h1 class="h5">Mark Stephen</h1>
-            <p>Web Designer</p>
+            <h1 class="h6">YASSINE EL KHAROUAI</h1>
+            <h1 class="h6">MEHDI ABOUELMOUAHIB</h1>
           </div>
         </div>
         <!-- Sidebar Navidation Menus--><span class="heading">Main</span>
         <ul class="list-unstyled">
-                <li class="active"><a href="index.html"> <i class="icon-home"></i>Home </a></li>
+                <li class="active"><a href="{{ url('admin/dashboard') }}"> <i class="icon-home"></i>Home </a></li>
                 <li>
                     <a href="{{url('view_category')}}"> <i class="icon-grid"></i>Category 
                 </a>
