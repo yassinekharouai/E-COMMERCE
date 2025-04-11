@@ -177,7 +177,7 @@
                 
                 <!-- Sign Up Link -->
                 <div class="text-center mt-6">
-                    <p class="text-gray-600">Don't have an account? <a href="#" class="text-indigo-600 font-medium hover:text-indigo-500">Sign up</a></p>
+                    <p class="text-gray-600">Don't have an account? <a href="{{url('/register')}}" class="text-indigo-600 font-medium hover:text-indigo-500">Sign up</a></p>
                 </div>
             </form>
         </div>
