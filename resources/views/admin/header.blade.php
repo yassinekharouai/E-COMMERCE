@@ -16,7 +16,7 @@
               <!-- Navbar Header-->
               <a href="index.html" class="navbar-brand">
                   <div class="brand-text brand-big visible text-uppercase">
-                      <strong class="text-primary">Dark</strong><strong>Admin</strong>
+                      <strong class="text-primary">Tralalero</strong><strong>Admin</strong>
                   </div>
                   <div class="brand-text brand-sm">
                       <strong class="text-primary">D</strong><strong>A</strong>
