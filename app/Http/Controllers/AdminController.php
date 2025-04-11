@@ -46,35 +46,29 @@ class AdminController extends Controller
 
     public function upload_product(Request $request) 
     {
-        // Validate input data
         $request->validate([
-            'title' => 'required|string|max:255',
-            'description' => 'required|string',
-            'price' => 'required|numeric|min:0',
-            'quantity' => 'required|integer|min:1',
-            'category' => 'required|string|max:255',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Optional image upload
+            // ... your existing validation rules ...
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Changed to required
         ]);
 
-        // Create a new product instance
         $data = new Product;
-        $data->title = $request->title;
-        $data->description = $request->description;
-        $data->price = $request->price;
-        $data->quantity = $request->quantity;
-        $data->category = $request->category;
+        // ... your existing assignments ...
 
-        // Handle image upload (if image is provided)
         if ($request->hasFile('image')) {
-            $imageName = time() . '.' . $request->image->extension();  
-            $request->image->move('products', $imageName); // Saving image in public/uploads/products folder
-            $data->image = $imageName;  // Store the image name in the database
+            $image = $request->file('image');
+            $imageName = time().'.'.$image->getClientOriginalExtension();  
+            
+            // Create products directory if it doesn't exist
+            $destinationPath = public_path('products');
+            if (!file_exists($destinationPath)) {
+                mkdir($destinationPath, 0755, true);
+            }
+            
+            $image->move($destinationPath, $imageName);
+            $data->image = $imageName;
         }
 
-        // Save the product
         $data->save();
-
-        // Redirect back with a success message
         return redirect()->back()->with('success', 'Product uploaded successfully!');
     }
 

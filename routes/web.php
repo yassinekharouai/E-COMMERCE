@@ -72,3 +72,6 @@ Route::get('/product_details/{id}',[HomeController::class, 'product_details']);
 Route::get('/add_cart/{id}',[HomeController::class, 'add_cart'])->middleware(['auth','verified']);
 
 Route::get('mycart',[HomeController::class, 'mycart'])->middleware(['auth','verified']);
+
+Route::get('category_section', [HomeController::class, 'category_section'])->middleware(['auth','verified']);
+Route::get('category/{id}', [HomeController::class, 'show_category'])->middleware(['auth','verified'])->name('category.show');

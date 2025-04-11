@@ -7,6 +7,7 @@ use App\Models\Product;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Cart;
+use App\Models\Category;
 
 class HomeController extends Controller
 {
@@ -129,6 +130,38 @@ class HomeController extends Controller
         }
 
         return view('home.mycart',compact('count','cart'));
+    }
+
+
+    public function category_section()
+    {
+        if(Auth::id()) {
+            $user = Auth::user();
+            $userid = $user->id;
+            $count = Cart::where('user_id',$userid)->count();
+        } else {
+            $count = '';
+        }
+        
+        $categories = Category::all(); // Get all categories
+        return view('home.category_section', compact('count', 'categories'));
+    }
+
+    public function show_category($id)
+    {
+        if(Auth::id()) {
+            $user = Auth::user();
+            $userid = $user->id;
+            $count = Cart::where('user_id',$userid)->count();
+        } else {
+            $count = '';
+        }
+        
+        $category = Category::find($id);
+        $products = Product::where('category', $category->category_name)->get();
+        $categories = Category::all();
+        
+        return view('home.category_products', compact('count', 'category', 'products', 'categories'));
     }
 
 }
