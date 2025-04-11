@@ -80,3 +80,9 @@ Route::delete('remove_cart/{id}', [HomeController::class, 'remove'])->name('remo
 
 
 Route::get('testimonial',[HomeController::class, 'testimonial']);
+
+
+Route::get('why',[HomeController::class, 'why']);
+
+
+Route::get('contact_us',[HomeController::class, 'contact_us']);
