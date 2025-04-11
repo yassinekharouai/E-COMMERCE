@@ -178,7 +178,7 @@
         </div>
         @else
         <div class="empty-products">
-          <img src="{{ asset('images/no-products.svg') }}" alt="No products found">
+          <img src="{{ asset('images/empty-cart.png') }}" alt="No products found">
           <h3>No products available in this category</h3>
           <p>Check back later or browse our other categories</p>
         </div>

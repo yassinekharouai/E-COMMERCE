@@ -75,3 +75,8 @@ Route::get('mycart',[HomeController::class, 'mycart'])->middleware(['auth','veri
 
 Route::get('category_section', [HomeController::class, 'category_section'])->middleware(['auth','verified']);
 Route::get('category/{id}', [HomeController::class, 'show_category'])->middleware(['auth','verified'])->name('category.show');
+
+Route::delete('remove_cart/{id}', [HomeController::class, 'remove'])->name('remove.cart');
+
+
+Route::get('testimonial',[HomeController::class, 'testimonial']);

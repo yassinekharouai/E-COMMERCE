@@ -164,4 +164,22 @@ class HomeController extends Controller
         return view('home.category_products', compact('count', 'category', 'products', 'categories'));
     }
 
+    public function remove($id)
+    {
+        Cart::destroy($id);
+        return redirect()->back()->with('success', 'Item removed from cart');
+    }
+
+
+    public function testimonial(){
+
+        if(Auth::id()) {
+            $user = Auth::user();
+            $userid = $user->id;
+            $count = Cart::where('user_id',$userid)->count();
+        } else {
+            $count = '';
+        }
+        return view('home.testimonial',compact('count'));
+    }
 }

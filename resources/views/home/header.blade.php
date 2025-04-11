@@ -23,7 +23,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="testimonial.html">
+              <a class="nav-link" href="{{url('testimonial')}}">
                 Testimonial
               </a>
             </li>
